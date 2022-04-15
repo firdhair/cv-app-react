@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+h1 {
+  font-size: 5.5rem;
+}
+
+li,
+button,
+label,
+input,
+a,
+p {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 4.2rem;
+}
+
+h3 {
+  font-size: 3.5rem;
+}
+
+h4,
+h5 {
+  font-size: 2rem;
+}
+
+ul {
+  list-style: none;
+  font-size: 5.5rem;
+}
+
+a {
+  color: #2c2c2c;
+  text-decoration: none;
+}
+
+.main-container {
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form-container {
+  background-color: #ececec;
+  border-radius: 0.8rem;
+  width: 60%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form-personal {
+  width: 80%;
+  margin: auto;
+  margin: 2rem auto;
+}
+
+.form-personal form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.form-personal form input {
+  width: 100%;
+  border: 0.5px solid #e0e0e0;
+  margin: 0.3rem 1rem;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  color: #4b4b4b;
+}
+
+.form-personal form textarea {
+  border-radius: 0.8rem;
+  padding: 1rem;
+  margin: 0.3rem 1rem;
+  width: 100%;
+  border: 0.5px solid #e0e0e0;
+  color: #4b4b4b;
+}
+
+.form-personal h4 {
+  font-weight: 500;
+  color: #4b4b4b;
+}
+/*# sourceMappingURL=style.css.map */

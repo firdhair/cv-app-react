@@ -1,0 +1,38 @@
+.form-container {
+  background-color: rgb(236, 236, 236);
+  border-radius: 0.8rem;
+  width: 60%;
+  margin: auto;
+  @include flex(center, center, column);
+}
+
+.form-personal {
+  width: 80%;
+  margin: auto;
+  margin: 2rem auto;
+  form {
+    @include flex(center, center, column);
+    //background-color: lightgreen;
+    width: 100%;
+    input {
+      width: 100%;
+      border: 0.5px solid rgb(224, 224, 224);
+      margin: 0.3rem 1rem;
+      padding: 0.8rem;
+      border-radius: 0.8rem;
+      color: $grey;
+    }
+    textarea {
+      border-radius: 0.8rem;
+      padding: 1rem;
+      margin: 0.3rem 1rem;
+      width: 100%;
+      border: 0.5px solid rgb(224, 224, 224);
+      color: $grey;
+    }
+  }
+  h4 {
+    font-weight: 500;
+    color: $grey;
+  }
+}

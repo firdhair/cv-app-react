@@ -1,79 +1,70 @@
 import React from 'react';
+import PersonalInfoInput from './PersonalInfoInput'
 const Form = (props) => {
     console.log("ini form")
-    const {form, handleChange} = props
+    const {personalDetails, handleChange} = props
 
-    console.log("form: ", form)
+    console.log("form: ", personalDetails)
     // for(let i = 0; i < form.length; i++) {
     //     console.log(form[i]);
     // }
 
     return(
-        <div>
+        <div className='form-container'>
+            <div className='form-personal'>
+                <h4>Personal Details</h4>
             <form>
-                <input 
+                <PersonalInfoInput
                     type="text"
-                    onChange={handleChange}
                     placeholder="Name"
-                    value={form.name}
+                    value={personalDetails.name}
                     name="name"
                     id="name"
-                >
-                </input>
-                <input 
-                    type="text"
                     onChange={handleChange}
+                />
+                <PersonalInfoInput
+                    type="text"
                     placeholder="Job"
-                    value={form.job}
+                    value={personalDetails.job}
                     name="job"
                     id="job"
-                >
-                </input>
-                <input 
+                    onChange={handleChange}
+                />
+                <PersonalInfoInput
                     type="text"
                     onChange={handleChange}
                     placeholder="Number"
-                    value={form.number}
+                    value={personalDetails.number}
                     name="number"
                     id="number"
-                >
-                </input>
-                <input 
+                />
+                <PersonalInfoInput
                     type="text"
                     onChange={handleChange}
                     placeholder="Email"
-                    value={form.email}
+                    value={personalDetails.email}
                     name="email"
                     id="email"
-                >
-                </input>
-                <input 
+                />
+                <PersonalInfoInput
                     type="text"
                     onChange={handleChange}
                     placeholder="Location"
-                    value={form.location}
+                    value={personalDetails.location}
                     name="location"
                     id="location"
-                >
-                </input>
-                <input 
+                />
+                <textarea rows="8" 
                     type="text"
                     onChange={handleChange}
                     placeholder="Desc"
-                    value={form.desc}
+                    value={personalDetails.desc}
                     name="desc"
                     id="desc"
                 >
-                </input>
+                </textarea>
                 {/* <button type="submit">Submit</button> */}
             </form>
-            <div>
-                <p>{form.name}</p>
-                <p>{form.job}</p>
-                <p>{form.number}</p>
-                <p>{form.email}</p>
-                <p>{form.location}</p>
-                <p>{form.desc}</p>
             </div>
         </div>
     )

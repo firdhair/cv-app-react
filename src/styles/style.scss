@@ -1,0 +1,25 @@
+$header1: 5.5rem;
+$header2: 4.2rem;
+$header3: 3.5rem;
+$header4: 2rem;
+$text: 1.5rem;
+$navbar-txt: 2rem;
+$medium: 3rem;
+
+$background: #f3f9fe;
+$black: #070504;
+$dark-brown: rgb(44, 33, 33);
+$gray-text: #2c2c2c;
+$grey: rgb(75, 75, 75);
+$medium-grey: rgb(162, 162, 162);
+$lightgrey: rgb(224, 224, 224);
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+@import "global";
+@import "main";
+@import "form";
