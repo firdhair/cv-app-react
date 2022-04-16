@@ -1,9 +1,10 @@
 import React from 'react';
 import PersonalDetailsInput from './PersonalDetailsInput'
 import WorkExperiencesInput from './WorkExperiencesInput'
+import NewExperienceInput from './NewExperienceInput'
 const Form = (props) => {
     //console.log("ini form")
-    const {personalDetails, handleChange, experiences, changeExperience, deleteExperience} = props
+    const {personalDetails, experiences, handleChange, changeExperience, deleteExperience, addExperience} = props
 
     //console.log("changeExperience form: ", changeExperience)
     //console.log("personalDetails: ", personalDetails)
@@ -11,6 +12,7 @@ const Form = (props) => {
     // for(let i = 0; i < form.length; i++) {
     //     console.log(form[i]);
     // }
+
 
     return(
         <div className='form-container'>
@@ -72,8 +74,13 @@ const Form = (props) => {
             <div className="form-experience form-input">
                 <h4>Work Experiences</h4>
                 <div className="form-experience__input">
+                        {/* {experiences.length === 0? <button>Add</button>: null } */}
                         {experiences.map((experience) =>{
-                            //console.log("experience id: ", experience.id)
+                            
+                            // if(experience.length === 0){
+                            //     console.log("experience is empty")
+                            // }
+                            // console.log("experience id: ", experience.id)
                             return(
                                 <form key={experience.id}>
                                     <WorkExperiencesInput
@@ -95,7 +102,7 @@ const Form = (props) => {
                                     <WorkExperiencesInput
                                         type="text"
                                         onChange={(e) => changeExperience(e, experience.id)}
-                                        placeholder="Year"
+                                        placeholder="Start Date"
                                         value={experience.year}
                                         name="year"
                                         id="year"
@@ -103,8 +110,8 @@ const Form = (props) => {
                                     <WorkExperiencesInput
                                         type="text"
                                        onChange={(e) => changeExperience(e, experience.id)}
-                                        placeholder="Status"
-                                        value={experience.status}
+                                        placeholder="End Date"
+                                        value={experience.end}
                                         name="status"
                                         id="status"
                                     />
@@ -116,11 +123,14 @@ const Form = (props) => {
                                         name="desc"
                                         id="desc"
                                     >
+                                    
                                     </textarea>
-                                    <i className = "fas fa-trash" onClick={() => deleteExperience(experience.id)}></i>     
+                                    <i className = "fas fa-trash" onClick={() => deleteExperience(experience.id)}></i>                                         
                                 </form>
                             )
                         })}
+                        <button className="btn-add" onClick={(e) => addExperience(e)}>Add Experience</button>
+                        {/* <NewExperienceInput/> */}
                 </div>
             </div>
         </div>

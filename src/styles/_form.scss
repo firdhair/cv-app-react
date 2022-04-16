@@ -9,7 +9,7 @@
 .form-input {
   width: 80%;
   margin: auto;
-  margin: 2rem auto;
+  margin: 1.2rem auto;
   form {
     @include flex(center, flex-start, column);
     //background-color: lightgreen;
@@ -39,10 +39,30 @@
       margin-top: 0.4rem;
       font-size: 1.5rem;
       border-radius: 0.8rem;
+      cursor: pointer;
+      transition: background 0.5s ease-in-out;
+    }
+    i:hover {
+      background-color: #d42e28;
     }
   }
   h4 {
     font-weight: 500;
     color: $grey;
+  }
+  .btn-add {
+    background-color: rgb(138, 168, 138);
+    color: white;
+    border: none;
+    padding: 0.8rem 3.5rem;
+    margin-left: 1.2rem;
+    margin-top: 0.4rem;
+    font-size: 1.5rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: background 0.5s ease-in-out;
+  }
+  .btn-add:hover {
+    background-color: rgb(112, 153, 112);
   }
 }

@@ -89,7 +89,7 @@ a {
 .form-input {
   width: 80%;
   margin: auto;
-  margin: 2rem auto;
+  margin: 1.2rem auto;
 }
 
 .form-input form {
@@ -136,10 +136,35 @@ a {
   margin-top: 0.4rem;
   font-size: 1.5rem;
   border-radius: 0.8rem;
+  cursor: pointer;
+  -webkit-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+}
+
+.form-input form i:hover {
+  background-color: #d42e28;
 }
 
 .form-input h4 {
   font-weight: 500;
   color: #4b4b4b;
+}
+
+.form-input .btn-add {
+  background-color: #8aa88a;
+  color: white;
+  border: none;
+  padding: 0.8rem 3.5rem;
+  margin-left: 1.2rem;
+  margin-top: 0.4rem;
+  font-size: 1.5rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  -webkit-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+}
+
+.form-input .btn-add:hover {
+  background-color: #709970;
 }
 /*# sourceMappingURL=style.css.map */

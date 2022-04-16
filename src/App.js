@@ -4,6 +4,7 @@ import './styles/style.css';
 import Form from './components/Form'
 import PersonalDetailsView from './components/views/PersonalDetailsView';
 import WorkExperiencesView from './components/views/WorkExperiencesView';
+import NewExperienceInput from './components/NewExperienceInput'
 import { Component } from "react";
 import uniqid from "uniqid"
 
@@ -22,27 +23,27 @@ class App extends Component{
       },
       experiences: [
         {
-          company: 'Zenius',
+          company: 'X Company',
           position: 'Front End Engineer',
-          year: '2023',
-          status: 'Active',
+          year: '2022',
+          end: '2023',
           jobdesc: 'The quick jumpy jumpy',
           id:uniqid()
         },
         {
-          company: 'Zenius2',
+          company: 'Z Company',
           position: 'Front End Engineer',
-          year: '2023',
-          status: 'Active',
-          jobdesc: 'The quick jumpy jumpy',
+          year: '2024',
+          end: '2025',
+          jobdesc: 'The quick jumpy jumpyx',
           id:uniqid()
         }
       ]
     }
 
-    this.onSubmitForm = this.onSubmitForm.bind(this) 
     this.handleDeleteExperience = this.handleDeleteExperience.bind(this) 
     this.handleChangeExperiences = this.handleChangeExperiences.bind(this)
+    this.addNewExperience = this.addNewExperience.bind(this)
   }
 
   handleChange = (e) => {
@@ -68,25 +69,25 @@ class App extends Component{
     console.log("id handleChangeExperiences: ", id, ", e target: ", e.target)
     let coba = [...this.state.experiences];
     //console.log("coba length:", coba.length)
-   for(let i = 0; i < coba.length; i++){
+    for(let i = 0; i < coba.length; i++){
       if(coba[i].id === id){
        console.log("coba [i]",coba[i])
        let exp = {...coba[i]};
        console.log("coba desc: ",e.target.parentNode[4].value)
       
-      const newExp = [...this.state.experiences]
-      newExp[i] = {
-        company: `${e.target.parentNode[0].value}`,
-        position: `${e.target.parentNode[1].value}`,
-        year: `${e.target.parentNode[2].value}`,
-        status: `${e.target.parentNode[3].value}`,
-        jobdesc: `${e.target.parentNode[4].value}`,
-        id: `${coba[i].id}`
-      }
-      this.setState({
-        experiences: newExp
-      })
-        console.log("new exp ",newExp)
+        const newExp = [...this.state.experiences]
+        newExp[i] = {
+          company: `${e.target.parentNode[0].value}`,
+          position: `${e.target.parentNode[1].value}`,
+          year: `${e.target.parentNode[2].value}`,
+          end: `${e.target.parentNode[3].value}`,
+          jobdesc: `${e.target.parentNode[4].value}`,
+          id: `${coba[i].id}`
+        }
+        this.setState({
+          experiences: newExp
+        })
+          console.log("new exp ",newExp)
       }
     }
     console.log("after: ", coba)
@@ -106,9 +107,25 @@ class App extends Component{
     })
   }
 
-  onSubmitForm = (e) => {
+  addNewExperience(e) {
     e.preventDefault()
-    console.log("ini onSubmitForm")
+    console.log("ini addNewExperience")
+    console.log("ini event add experience: ", e.target)
+    
+    let newExp = [...this.state.experiences]
+    console.log("coba addNewExperience: ", newExp);
+    newExp = {
+        company: '',
+        position: '',
+        year: '',
+        end: '',
+        jobdesc: '',
+        id: uniqid()
+    }
+    this.setState({
+        experiences: this.state.experiences.concat(newExp)
+    })
+    console.log("set state after new experience: ", this.state.experiences)
   }
 
   render() {
@@ -125,6 +142,7 @@ class App extends Component{
           experiences={experiences} 
           deleteExperience={this.handleDeleteExperience}
           changeExperience={this.handleChangeExperiences}
+          addExperience={this.addNewExperience}
         />
         <PersonalDetailsView personalDetails={personalDetails}/>
         <WorkExperiencesView experiences={experiences}/>

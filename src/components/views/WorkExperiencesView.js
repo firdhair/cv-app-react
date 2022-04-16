@@ -6,19 +6,13 @@ const WorkExperiencesView = (props) => {
 
     return(
         <div>
-                {/* <p>{personalDetails.name}</p>
-                <p>{personalDetails.job}</p>
-                <p>{personalDetails.number}</p>
-                <p>{personalDetails.email}</p>
-                <p>{personalDetails.location}</p>
-                <p>{personalDetails.desc}</p> */}
             {experiences.map((experience) => {
                 return (
                     <div className="task" key={experience.id}>
                         <p>{experience.company}</p>
                         <p>{experience.position}</p>
                         <p>{experience.year}</p>
-                        <p>{experience.status}</p>
+                        <p>{experience.end}</p>
                         <p>{experience.jobdesc}</p>
                     </div>
                 )
