@@ -23,6 +23,18 @@
     width: 80%;
     margin: 6rem auto 4rem auto;
   }
+  .title {
+    flex: 1 1 30%;
+  }
+  .list {
+    color: $cv-grey;
+    flex: 1 1 70%;
+    text-align: justify;
+  }
+  .bold {
+    color: rgb(104, 104, 104);
+    font-weight: 600;
+  }
 }
 
 //////////////////////// PERSONAL DETAILS ////////////////////////
@@ -69,7 +81,7 @@
 
   .personal-bio {
     @include flex(flex-start, flex-start, row);
-    margin: 2rem auto 4rem auto;
+    margin: 2rem auto 6rem auto;
     position: relative;
 
     &:before {
@@ -77,7 +89,7 @@
       position: absolute;
       width: 100%;
       height: 1.5px;
-      bottom: -25%;
+      top: 120%;
       background: rgba(230, 230, 230, 0.75);
       border-radius: 15px;
     }
@@ -106,27 +118,30 @@
     position: absolute;
     width: 100%;
     height: 1.5px;
-    bottom: -25%;
+    top: 101%;
     background: rgba(230, 230, 230, 0.75);
     border-radius: 15px;
   }
 
-  .work-experiences-title {
-    flex: 1 1 30%;
-  }
-
-  .work-experiences-list {
-    color: $cv-grey;
-    flex: 1 1 70%;
-    text-align: justify;
-  }
-
   .experience-list {
-    margin: 0rem 0rem 2rem 0rem;
+    margin: 0rem 0rem 2.5rem 0rem;
+    .desc {
+      margin: 1rem 0rem;
+    }
   }
+}
 
-  .job-position {
-    color: rgb(104, 104, 104);
-    font-weight: 600;
+//////////////////////// EDUCATION  ////////////////////////
+.education-container {
+  @include flex(flex-start, flex-start, row);
+  margin: 2rem auto 5rem auto;
+  position: relative;
+  flex-wrap: wrap;
+
+  .education {
+    margin: 0rem 0rem 2.5rem 0rem;
+    .desc {
+      margin: 1rem 0rem;
+    }
   }
 }

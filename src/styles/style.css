@@ -200,6 +200,25 @@ a {
   margin: 6rem auto 4rem auto;
 }
 
+.cv-container .title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 30%;
+          flex: 1 1 30%;
+}
+
+.cv-container .list {
+  color: #767e90;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 70%;
+          flex: 1 1 70%;
+  text-align: justify;
+}
+
+.cv-container .bold {
+  color: #686868;
+  font-weight: 600;
+}
+
 .personal-details-container .personal-details {
   margin: 2rem auto 4rem auto;
   display: -webkit-box;
@@ -271,7 +290,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin: 2rem auto 4rem auto;
+  margin: 2rem auto 6rem auto;
   position: relative;
 }
 
@@ -280,7 +299,7 @@ a {
   position: absolute;
   width: 100%;
   height: 1.5px;
-  bottom: -25%;
+  top: 120%;
   background: rgba(230, 230, 230, 0.75);
   border-radius: 15px;
 }
@@ -324,31 +343,44 @@ a {
   position: absolute;
   width: 100%;
   height: 1.5px;
-  bottom: -25%;
+  top: 101%;
   background: rgba(230, 230, 230, 0.75);
   border-radius: 15px;
 }
 
-.work-experiences-container .work-experiences-title {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 30%;
-          flex: 1 1 30%;
-}
-
-.work-experiences-container .work-experiences-list {
-  color: #767e90;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 70%;
-          flex: 1 1 70%;
-  text-align: justify;
-}
-
 .work-experiences-container .experience-list {
-  margin: 0rem 0rem 2rem 0rem;
+  margin: 0rem 0rem 2.5rem 0rem;
 }
 
-.work-experiences-container .job-position {
-  color: #686868;
-  font-weight: 600;
+.work-experiences-container .experience-list .desc {
+  margin: 1rem 0rem;
+}
+
+.education-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 2rem auto 5rem auto;
+  position: relative;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.education-container .education {
+  margin: 0rem 0rem 2.5rem 0rem;
+}
+
+.education-container .education .desc {
+  margin: 1rem 0rem;
 }
 /*# sourceMappingURL=style.css.map */
