@@ -1,8 +1,8 @@
 const PersonalInfo = (props) => {
-    console.log("ini form")
+    //console.log("ini form")
     const {personalDetails} = props
 
-    console.log("ini personal info: ", personalDetails)
+    //console.log("ini personal info: ", personalDetails)
 
     return(
         <div>

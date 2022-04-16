@@ -1,7 +1,7 @@
-const PersonalInfoInput = (props) => {
-    console.log("ini personal info input")
+const WorkExperiencesInput = (props) => {
+    //console.log("ini work experiences input")
     const {type, onChange, placeholder, value, name, id} = props
-
+    
     return(
             <input 
                     type={type}
@@ -14,4 +14,4 @@ const PersonalInfoInput = (props) => {
     )
 }
 
-export default PersonalInfoInput
+export default WorkExperiencesInput

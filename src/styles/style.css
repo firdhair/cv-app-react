@@ -70,7 +70,7 @@ a {
   background-color: #ececec;
   border-radius: 0.8rem;
   width: 60%;
-  margin: auto;
+  margin: 3rem auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,30 +86,31 @@ a {
           flex-direction: column;
 }
 
-.form-personal {
+.form-input {
   width: 80%;
   margin: auto;
   margin: 2rem auto;
 }
 
-.form-personal form {
+.form-input form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  margin: 1rem 0rem 1.5rem 0rem;
 }
 
-.form-personal form input {
+.form-input form input {
   width: 100%;
   border: 0.5px solid #e0e0e0;
   margin: 0.3rem 1rem;
@@ -118,7 +119,7 @@ a {
   color: #4b4b4b;
 }
 
-.form-personal form textarea {
+.form-input form textarea {
   border-radius: 0.8rem;
   padding: 1rem;
   margin: 0.3rem 1rem;
@@ -127,7 +128,17 @@ a {
   color: #4b4b4b;
 }
 
-.form-personal h4 {
+.form-input form i {
+  background-color: #d9534f;
+  color: white;
+  padding: 0.8rem 1.3rem;
+  margin-left: 1.2rem;
+  margin-top: 0.4rem;
+  font-size: 1.5rem;
+  border-radius: 0.8rem;
+}
+
+.form-input h4 {
   font-weight: 500;
   color: #4b4b4b;
 }

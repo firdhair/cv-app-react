@@ -2,18 +2,19 @@
   background-color: rgb(236, 236, 236);
   border-radius: 0.8rem;
   width: 60%;
-  margin: auto;
+  margin: 3rem auto;
   @include flex(center, center, column);
 }
 
-.form-personal {
+.form-input {
   width: 80%;
   margin: auto;
   margin: 2rem auto;
   form {
-    @include flex(center, center, column);
+    @include flex(center, flex-start, column);
     //background-color: lightgreen;
     width: 100%;
+    margin: 1rem 0rem 1.5rem 0rem;
     input {
       width: 100%;
       border: 0.5px solid rgb(224, 224, 224);
@@ -29,6 +30,15 @@
       width: 100%;
       border: 0.5px solid rgb(224, 224, 224);
       color: $grey;
+    }
+    i {
+      background-color: #d9534f;
+      color: white;
+      padding: 0.8rem 1.3rem;
+      margin-left: 1.2rem;
+      margin-top: 0.4rem;
+      font-size: 1.5rem;
+      border-radius: 0.8rem;
     }
   }
   h4 {
