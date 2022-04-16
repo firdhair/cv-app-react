@@ -5,7 +5,7 @@ const WorkExperiencesView = (props) => {
     console.log("ini education view : ", education)
 
     return(
-        <div>
+        <div className="education-container">
             {education.map((education) => {
                 return (
                     <div className="education" key={education.id}>

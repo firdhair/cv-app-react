@@ -9,14 +9,6 @@ const Form = (props) => {
             changeEducation, deleteEducation, addEducation
     } = props
 
-    console.log("education: ", education)
-    //console.log("changeExperience form: ", changeExperience)
-    //console.log("personalDetails: ", personalDetails)
-    //console.log("workExperiences form: ", experiences)
-    // for(let i = 0; i < form.length; i++) {
-    //     console.log(form[i]);
-    // }
-
 
     return(
         <div className='form-container'>
@@ -78,13 +70,7 @@ const Form = (props) => {
             <div className="form-experience form-input">
                 <h4>Work Experiences</h4>
                 <div className="form-experience__input">
-                        {/* {experiences.length === 0? <button>Add</button>: null } */}
                         {experiences.map((experience) =>{
-                            
-                            // if(experience.length === 0){
-                            //     console.log("experience is empty")
-                            // }
-                            // console.log("experience id: ", experience.id)
                             return(
                                 <form key={experience.id}>
                                     <WorkExperiencesInput

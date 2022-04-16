@@ -14,6 +14,8 @@ $grey: rgb(75, 75, 75);
 $medium-grey: rgb(162, 162, 162);
 $lightgrey: rgb(224, 224, 224);
 
+$cv-grey: #767e90;
+
 @mixin flex($justify, $align, $direction) {
   display: flex;
   justify-content: $justify;
@@ -23,3 +25,4 @@ $lightgrey: rgb(224, 224, 224);
 @import "global";
 @import "main";
 @import "form";
+@import "cv-container";

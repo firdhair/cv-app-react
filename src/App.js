@@ -19,7 +19,7 @@ class App extends Component{
         number: ["08xx - xxxx - xxxx"],
         email: ["firdhair30@gmail.com"],
         location: ["Medan"],
-        desc: ["The quick brown fox jumps over the lazy dog"],
+        desc: ["Bacon ipsum dolor amet meatloaf pork chop buffalo ribeye turkey ground round. Chicken ribeye hamburger, bresaola pancetta strip steak doner cupim spare ribs frankfurter. Porchetta t-bone rump tri-tip, kevin prosciutto burgdoggen ground round shank ball tip meatball tail. Beef brisket t-bone, turducken kielbasa shankle boudin jerky drumstick flank sirloin frankfurter. "],
       },
       experiences: [
         {
@@ -27,7 +27,7 @@ class App extends Component{
           position: 'Front End Engineer',
           year: '2022',
           end: '2023',
-          jobdesc: 'The quick jumpy jumpy',
+          jobdesc: 'Bacon ipsum dolor amet meatloaf pork chop buffalo ribeye turkey ground round. Chicken ribeye hamburger, bresaola pancetta strip steak doner cupim spare ribs frankfurter. Porchetta t-bone rump tri-tip, kevin prosciutto burgdoggen ground round shank ball tip meatball tail. Beef brisket t-bone, turducken kielbasa shankle boudin jerky drumstick flank sirloin frankfurter. ',
           id:uniqid()
         },
         {
@@ -35,7 +35,7 @@ class App extends Component{
           position: 'Front End Engineer',
           year: '2024',
           end: '2025',
-          jobdesc: 'The quick jumpy jumpyx',
+          jobdesc: 'Bacon ipsum dolor amet meatloaf pork chop buffalo ribeye turkey ground round. Chicken ribeye hamburger, bresaola pancetta strip steak doner cupim spare ribs frankfurter. Porchetta t-bone rump tri-tip, kevin prosciutto burgdoggen ground round shank ball tip meatball tail. Beef brisket t-bone, turducken kielbasa shankle boudin jerky drumstick flank sirloin frankfurter. ',
           id:uniqid()
         }
       ],
@@ -213,9 +213,13 @@ class App extends Component{
           changeEducation = {this.handleChangeEducation}
           deleteEducation={this.handleDeleteEducation}
         />
-        <PersonalDetailsView personalDetails={personalDetails}/>
-        <WorkExperiencesView experiences={experiences}/>
-        <EducationView education={education}/>
+        <div className="cv-container">
+          <div className="cv-container__attributes">
+            <PersonalDetailsView personalDetails={personalDetails}/>
+            <WorkExperiencesView experiences={experiences}/>
+            <EducationView education={education}/>
+          </div>
+        </div>
       </div>
     )
   }
