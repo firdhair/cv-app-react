@@ -4,7 +4,7 @@ import './styles/style.css';
 import Form from './components/Form'
 import PersonalDetailsView from './components/views/PersonalDetailsView';
 import WorkExperiencesView from './components/views/WorkExperiencesView';
-import NewExperienceInput from './components/NewExperienceInput'
+import EducationView from './components/views/EducationView';
 import { Component } from "react";
 import uniqid from "uniqid"
 
@@ -38,19 +38,38 @@ class App extends Component{
           jobdesc: 'The quick jumpy jumpyx',
           id:uniqid()
         }
+      ],
+      education: [
+        {
+          course: 'Introduction to Artificial Intelligence',
+          institution: 'MIT',
+          year: '2025',
+          end: 'Present',
+          edudesc: 'The jump jump fox quick brownnnn',
+          id: uniqid()
+        },
+        {
+          course: 'Data Structure',
+          institution: 'MIT',
+          year: '2020',
+          end: '2024',
+          edudesc: 'The jump jump fox quick brownnnn',
+          id: uniqid()
+        }
       ]
     }
 
     this.handleDeleteExperience = this.handleDeleteExperience.bind(this) 
     this.handleChangeExperiences = this.handleChangeExperiences.bind(this)
     this.addNewExperience = this.addNewExperience.bind(this)
+    this.handleChangeEducation = this.handleChangeEducation.bind(this)
+    this.handleDeleteEducation = this.handleDeleteEducation.bind(this) 
+    this.addNewEducation = this.addNewEducation.bind(this)
   }
 
   handleChange = (e) => {
     //console.log("e: ", e.target.parentNode[1].value)
     console.log("e: ", e.target.parentNode)
-    const cobak= this.state.personalDetails;
-    //console.log("cobak: ", cobak)
     
     this.setState({
       personalDetails:{
@@ -62,20 +81,14 @@ class App extends Component{
         desc:e.target.parentNode[5].value
       },
     })
-    //console.log("ini handleChange, nama: ", this.state.personalDetails.name)
   }
 
   handleChangeExperiences(e, id) {
     console.log("id handleChangeExperiences: ", id, ", e target: ", e.target)
     let coba = [...this.state.experiences];
-    //console.log("coba length:", coba.length)
     for(let i = 0; i < coba.length; i++){
       if(coba[i].id === id){
-       console.log("coba [i]",coba[i])
-       let exp = {...coba[i]};
-       console.log("coba desc: ",e.target.parentNode[4].value)
-      
-        const newExp = [...this.state.experiences]
+        let newExp = [...this.state.experiences]
         newExp[i] = {
           company: `${e.target.parentNode[0].value}`,
           position: `${e.target.parentNode[1].value}`,
@@ -87,33 +100,17 @@ class App extends Component{
         this.setState({
           experiences: newExp
         })
-          console.log("new exp ",newExp)
       }
     }
     console.log("after: ", coba)
   }
 
-  handleDeleteExperience(id) {
-    //e.preventDefault()
-    console.log("ini handle delete")
-    //console.log("ini id handle delete", id)
-    const experiences = this.state.experiences;
-    //console.log("delete experiences", experiences)
-    const updatedExperiences = experiences.filter((experience) => experience.id !== id)
-    
-    console.log("updatedExperiences: ", updatedExperiences)
-    this.setState({
-        experiences: updatedExperiences
-    })
-  }
-
   addNewExperience(e) {
     e.preventDefault()
-    console.log("ini addNewExperience")
-    console.log("ini event add experience: ", e.target)
+    //console.log("ini event add experience: ", e.target)
     
     let newExp = [...this.state.experiences]
-    console.log("coba addNewExperience: ", newExp);
+    //console.log("coba addNewExperience: ", newExp);
     newExp = {
         company: '',
         position: '',
@@ -125,11 +122,77 @@ class App extends Component{
     this.setState({
         experiences: this.state.experiences.concat(newExp)
     })
-    console.log("set state after new experience: ", this.state.experiences)
+    //console.log("set state after new experience: ", this.state.experiences)
+  }
+
+  handleDeleteExperience(id) {
+    //e.preventDefault()
+    //console.log("ini handle delete")
+    const experiences = this.state.experiences;
+    const updatedExperiences = experiences.filter((experience) => experience.id !== id)
+    
+    console.log("updatedExperiences: ", updatedExperiences)
+    this.setState({
+        experiences: updatedExperiences
+    })
+  }
+
+  handleChangeEducation(e, id) {
+    console.log("id handleChangeEducation: ", id, ", e target: ", e.target)
+    let coba = [...this.state.education];
+    for(let i = 0; i < coba.length; i++){
+      if(coba[i].id === id){
+        let newExp = [...this.state.education]
+        newExp[i] = {
+          course: `${e.target.parentNode[0].value}`,
+          institution: `${e.target.parentNode[1].value}`,
+          year: `${e.target.parentNode[2].value}`,
+          end: `${e.target.parentNode[3].value}`,
+          edudesc: `${e.target.parentNode[4].value}`,
+          id: `${coba[i].id}`
+        }
+        this.setState({
+          education: newExp
+        })
+      }
+    }
+    console.log("after handleChangeEducation: ", this.state.education)
+
+  }
+
+  handleDeleteEducation(id){
+    console.log("ini handle delete")
+    const education = this.state.education;
+    const updatedEducation = education.filter((education) => education.id !== id)
+    
+    console.log("updatedExperiences: ", updatedEducation)
+    this.setState({
+        education: updatedEducation
+    })
+  }
+
+  addNewEducation(e){
+    e.preventDefault()
+    console.log("ini addNewEducation: ", e.target)
+
+    let newExp = [...this.state.education]
+    console.log("coba addNewExperience: ", newExp);
+    newExp = {
+        course: '',
+        institution: '',
+        year: '',
+        end: '',
+        edudesc: '',
+        id: uniqid()
+    }
+    this.setState({
+        education: this.state.education.concat(newExp)
+    })
+    console.log("set state after new education: ", this.state.education)
   }
 
   render() {
-    const {personalDetails, experiences} = this.state
+    const {personalDetails, experiences, education} = this.state
     // console.log("personal details: ", personalDetails)
     // console.log("workExperiences id: ", experiences)
 
@@ -140,12 +203,19 @@ class App extends Component{
           handleChange={this.handleChange} 
           personalDetails={personalDetails} 
           experiences={experiences} 
-          deleteExperience={this.handleDeleteExperience}
-          changeExperience={this.handleChangeExperiences}
+          education={education}
+
           addExperience={this.addNewExperience}
+          changeExperience={this.handleChangeExperiences}
+          deleteExperience={this.handleDeleteExperience}
+
+          addEducation = {this.addNewEducation}
+          changeEducation = {this.handleChangeEducation}
+          deleteEducation={this.handleDeleteEducation}
         />
         <PersonalDetailsView personalDetails={personalDetails}/>
         <WorkExperiencesView experiences={experiences}/>
+        <EducationView education={education}/>
       </div>
     )
   }

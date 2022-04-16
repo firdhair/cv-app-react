@@ -8,7 +8,7 @@ const WorkExperiencesView = (props) => {
         <div>
             {experiences.map((experience) => {
                 return (
-                    <div className="task" key={experience.id}>
+                    <div className="work-experience" key={experience.id}>
                         <p>{experience.company}</p>
                         <p>{experience.position}</p>
                         <p>{experience.year}</p>
