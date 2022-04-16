@@ -1,3 +1,4 @@
+# <a href="https://firdhair.github.io/cv-app-react/"> Live Preview </a> 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
